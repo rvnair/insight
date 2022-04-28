@@ -1,3 +1,6 @@
 [submodule "lib/dss"]
 	path = lib/dss
 	url = https://github.com/pyrito/dss.git
+[submodule "lib/osm"]
+	path = lib/osm
+	url = https://github.com/pyrito/osm.git
