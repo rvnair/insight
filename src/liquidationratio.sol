@@ -4,7 +4,7 @@ import "github.com/provable-things/ethereum-api/provableAPI_0.5.sol";
 
 contract LiquidationRatio is usingProvable {
 
-    uint public lr;
+    uint256 public lr;
 
     event LogNewLiquidationRatio(string lr);
     event LogNewProvableQuery(string description);
@@ -24,6 +24,13 @@ contract LiquidationRatio is usingProvable {
         // require(msg.sender == provable_cbAddress());
         emit LogNewLiquidationRatio(result);
         uint256 liquid_ratio = parseInt(result, 2); 
+        lr = liquid_ratio;
+    }
+
+    function peek()
+        public returns (uint256)
+    {
+        return lr;
     }
 
     function update()
